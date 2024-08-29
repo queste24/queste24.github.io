@@ -671,14 +671,19 @@ img{max-width:50%}
 
     function checkHiddenMessage() {
         const horn1Visible = document.getElementById(&#39;horn1&#39;).style.display === &#39;block&#39;;
+        
+          const horn2hidden = document.getElementById(&#39;horn2&#39;).style.display === &#39;none&#39;;
+               const horn4hidden = document.getElementById(&#39;horn4&#39;).style.display === &#39;none&#39;;
         const horn3Visible = document.getElementById(&#39;horn3&#39;).style.display === &#39;block&#39;;
         const flameVisible = document.getElementById(&#39;flame&#39;).style.display === &#39;block&#39;;
         const pupilUpVisible = document.getElementById(&#39;pupilUp&#39;).style.display === &#39;block&#39;;
         const teeth1Visible = document.getElementById(&#39;teeth1&#39;).style.display === &#39;block&#39;;
         const teeth2Visible = document.getElementById(&#39;teeth2&#39;).style.display === &#39;block&#39;;
         const teeth3Visible = document.getElementById(&#39;teeth3&#39;).style.display === &#39;block&#39;;
+        
+              const teeth4Vhidden = document.getElementById(&#39;teeth4&#39;).style.display === &#39;none&#39;;
 
-        if (horn1Visible &amp;&amp; horn3Visible &amp;&amp; flameVisible &amp;&amp; pupilUpVisible &amp;&amp; teeth1Visible &amp;&amp; teeth2Visible &amp;&amp; teeth3Visible) {
+        if (horn1Visible &amp;&amp; horn3Visible &amp;&amp; flameVisible &amp;&amp; pupilUpVisible &amp;&amp; teeth1Visible &amp;&amp; teeth2Visible &amp;&amp; teeth3Visible &amp;&amp; teeth4Vhidden&amp;&amp;horn2hidden&amp;&amp;horn4hidden) {
             document.getElementById(&#39;hiddenMessage&#39;).style.display = &#39;block&#39;;
         } else {
             document.getElementById(&#39;hiddenMessage&#39;).style.display = &#39;none&#39;;
@@ -721,21 +726,7 @@ img{max-width:50%}
         checkHiddenMessage(); // Check for the hidden message condition
     }
 
-    function checkHiddenMessage() {
-        const horn1Visible = document.getElementById(&#39;horn1&#39;).style.display === &#39;block&#39;;
-        const horn3Visible = document.getElementById(&#39;horn3&#39;).style.display === &#39;block&#39;;
-        const flameVisible = document.getElementById(&#39;flame&#39;).style.display === &#39;block&#39;;
-        const pupilUpVisible = document.getElementById(&#39;pupilUp&#39;).style.display === &#39;block&#39;;
-        const teeth1Visible = document.getElementById(&#39;teeth1&#39;).style.display === &#39;block&#39;;
-        const teeth2Visible = document.getElementById(&#39;teeth2&#39;).style.display === &#39;block&#39;;
-        const teeth3Visible = document.getElementById(&#39;teeth3&#39;).style.display === &#39;block&#39;;
-
-        if (horn1Visible &amp;&amp; horn3Visible &amp;&amp; flameVisible &amp;&amp; pupilUpVisible &amp;&amp; teeth1Visible &amp;&amp; teeth2Visible &amp;&amp; teeth3Visible) {
-            document.getElementById(&#39;hiddenMessage&#39;).style.display = &#39;block&#39;;
-        } else {
-            document.getElementById(&#39;hiddenMessage&#39;).style.display = &#39;none&#39;;
-        }
-    }
+   
 &lt;/script&gt;
 
 &lt;style&gt;
