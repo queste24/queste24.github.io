@@ -1483,16 +1483,43 @@ image1.src = imageUrl1;
 image2.src = imageUrl2;
 
 function resizeCanvas() {
-var container = document.querySelector(&#39;.canvas-container&#39;);
+    var container = document.querySelector(&#39;.canvas-container&#39;);
+    if (!container) {
+        console.error(&#39;Container element with class &quot;canvas-container&quot; not found.&#39;);
+        return;
+    }
 
     const maxWidth = container.clientWidth;
-    const maxHeight =  container.clientHeight;
+    const maxHeight = container.clientHeight;
+
+    if (!board || !board[0] || !board.length) {
+        console.error(&#39;Board is not defined or is empty.&#39;);
+        return;
+    }
+
     const cellSize = Math.min(maxWidth / board[0].length, maxHeight / board.length);
+
+    if (!canvas) {
+        console.error(&#39;Canvas element is not defined.&#39;);
+        return;
+    }
+
     canvas.width = cellSize * board[0].length;
     canvas.height = cellSize * board.length;
-    drawBoard(cellSize);
-    drawGameState(cellSize);
+
+    if (typeof drawBoard === &#39;function&#39;) {
+        drawBoard(cellSize);
+    } else {
+        console.error(&#39;drawBoard function is not defined.&#39;);
+    }
+
+    if (typeof drawGameState === &#39;function&#39;) {
+        drawGameState(cellSize);
+    } else {
+        console.error(&#39;drawGameState function is not defined.&#39;);
+    }
 }
+
 var container = document.querySelector(&#39;.canvas-container&#39;);
  container.clientWidth=&quot;50%&quot;;
  container.clientHeigth=&quot;70vw&quot;;
@@ -2574,20 +2601,49 @@ image1.src = imageUrl1;
 image2.src = imageUrl2;
 
 function resizeCanvas() {
-var container = document.querySelector(&#39;.canvas-container&#39;);
+    var container = document.querySelector(&#39;.canvas-container&#39;);
+    if (!container) {
+        console.error(&#39;Container element with class &quot;canvas-container&quot; not found.&#39;);
+        return;
+    }
 
     const maxWidth = container.clientWidth;
-    const maxHeight =  container.clientHeight;
+    const maxHeight = container.clientHeight;
+
+    if (!board || !board[0] || !board.length) {
+        console.error(&#39;Board is not defined or is empty.&#39;);
+        return;
+    }
+
     const cellSize = Math.min(maxWidth / board[0].length, maxHeight / board.length);
+
+    if (!canvas) {
+        console.error(&#39;Canvas element is not defined.&#39;);
+        return;
+    }
+
     canvas.width = cellSize * board[0].length;
     canvas.height = cellSize * board.length;
-    drawBoard(cellSize);
-    drawGameState(cellSize);
+
+    if (typeof drawBoard === &#39;function&#39;) {
+        drawBoard(cellSize);
+    } else {
+        console.error(&#39;drawBoard function is not defined.&#39;);
+    }
+
+    if (typeof drawGameState === &#39;function&#39;) {
+        drawGameState(cellSize);
+    } else {
+        console.error(&#39;drawGameState function is not defined.&#39;);
+    }
 }
+
 var container = document.querySelector(&#39;.canvas-container&#39;);
  container.clientWidth=&quot;50%&quot;;
  container.clientHeigth=&quot;70vw&quot;;
 resizeCanvas();
+
+
 
 function drawBoard(cellSize) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
