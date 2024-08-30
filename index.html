@@ -1287,11 +1287,14 @@ Besser gehst Du nur durch die Tür der guten Wache. Welche Tür ist das?
 
 
 &lt;div class=&quot;buttonflex&quot;&gt;
+
 &lt;&lt;button &quot;Chamäleon&quot;&gt;&gt;
  &lt;&lt;script&gt;&gt;
-UI.alert&quot;Du stämmst dich gegen die Tür die schlagartig nachgibt, nur mit Glück fälst Du nicht in das Loch, dass hinter der Tür des bodenlosen Raums gähnt.&quot;)
+UI.alert(&quot;Du stämmst dich gegen die Tür die schlagartig nachgibt, nur mit Glück fällst Du nicht in das Loch, dass hinter der Tür des bodenlosen Raums gähnt.&quot;)
  &lt;&lt;/script&gt;&gt;
 &lt;&lt;/button&gt;&gt;
+
+
 
 &lt;&lt;button &quot;Krokodil&quot;&gt;&gt;
         &lt;&lt;run UI.alert(&quot;Du öffnest die Tür. Sie beherbergt eine  kleine Kammer. Du blickst in eine Batterie von Pfeilen, Du hörst  nur das Knarzen und Reißen eines alten Seils. Glück gehabt, diese Fallen wurden zu lange nicht gewartet!&quot;)&gt;&gt;
@@ -1385,14 +1388,20 @@ min-width: 25%;
            max-height: 85vw;
           width:800px;
                 height:800px;
+                
    
     }
     
     .button-container {
     display: flex;
   margin: 29px auto;
+  flex-direction: row;
+  flex-wrap: wrap;
     
     }
+    
+    button{
+    width: max-content;}
     
     
     @media only screen and (max-width: 630px) {
@@ -1429,10 +1438,25 @@ min-width: 25%;
 &lt;&lt;goto &quot;pfade_schwer&quot;&gt;&gt;
 [[pfade_schwer]]
 &lt;&lt;/button&gt;&gt;
+&lt;&lt;button&quot;Tip&quot;&gt;&gt;
+&lt;&lt;script&gt;&gt;
+UI.alert(&#39; &lt;p&gt; Es handelt sich um ein Masyu Puzzle.&lt;/p&gt;&lt;img src=&quot;https://glumbosch.github.io/queste24/bilder/path_rules.png&quot; alt=&quot;Path Rules&quot;&gt;&#39;)
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/button&gt;&gt;
    
      &lt;/div&gt;
 &lt;/div&gt;
 &lt;textarea id=&quot;gameStateText&quot; display=none&gt;&lt;/textarea&gt;
+
+
+
+
+
+
+
+
+
+ 
 
 &lt;&lt;timed 50ms&gt;&gt; 
     
@@ -2540,6 +2564,11 @@ min-width: 25%;
 &lt;&lt;/button&gt;&gt;
      &lt;/div&gt;
 &lt;/div&gt;
+&lt;&lt;button&quot;Tip&quot;&gt;&gt;
+&lt;&lt;script&gt;&gt;
+UI.alert(&#39; &lt;p&gt; Es handelt sich um ein Masyu Puzzle.&lt;/p&gt;&lt;img src=&quot;https://glumbosch.github.io/queste24/bilder/path_rules.png&quot; alt=&quot;Path Rules&quot;&gt;&#39;)
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/button&gt;&gt;
 &lt;textarea id=&quot;gameStateText&quot; display=block&gt;&lt;/textarea&gt;
 
 &lt;&lt;timed 50ms&gt;&gt; 
